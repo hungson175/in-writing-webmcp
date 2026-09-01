@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A synthetic live-call facts demonstration using local acoustic keyword spotting and WebMCP." />
+    <meta http-equiv="origin-trial" content="An2udOLsUVYin2YuygomRe8nO8qa5GA6th8xcWUQwoZ9A4D5wLJUbu1wgHaZbBM6YbHKnaxMD+yCEYiAzS3wrQIAAABUeyJvcmlnaW4iOiJodHRwczovL2h1bmdzb24xNzUuZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJXZWJNQ1AiLCJleHBpcnkiOjE3OTQ4NzM2MDB9" />
+    <link rel="icon" href="data:," />
+    <title>IN WRITING — live call facts</title>
+    <script type="module" crossorigin src="./assets/index-DzCQocjs.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DmuZzjim.css">
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <a class="brand" href="#top" aria-label="IN WRITING home">IN WRITING</a>
+        <span class="prototype">Mock-platform demonstration</span>
+      </header>
+
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Facts in the four seconds that matter</p>
+          <h1 id="hero-title">Hear the ask.<br /><em>See the clock.</em></h1>
+          <p class="dek">
+            A closed-vocabulary acoustic detector listens to a synthetic debt-collection call and
+            pairs a risky payment phrase with a dated sample case file. It creates no full transcript.
+          </p>
+        </div>
+        <aside class="case-file" aria-label="Synthetic case file">
+          <p class="case-kicker">Synthetic case file</p>
+          <dl>
+            <div><dt>Notice received</dt><dd>12 Aug 2026</dd></div>
+            <div><dt>Last activity</dt><dd>03 Mar 2019</dd></div>
+            <div><dt>Displayed balance</dt><dd>$9,240</dd></div>
+            <div><dt>Validation window</dt><dd>9 days shown</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="consent" aria-label="Recording consent notice">
+        <strong>Demonstration only: synthetic audio; no real call is recorded.</strong>
+        Recording laws differ by jurisdiction. This demonstration does not adjudicate them. Before
+        any real recording, check the applicable rule and obtain required consent.
+      </section>
+
+      <section class="demo" aria-labelledby="demo-title">
+        <div class="demo-head">
+          <div>
+            <p class="eyebrow">Closed-vocabulary acoustic detector</p>
+            <h2 id="demo-title">Listen only for the phrases that change the clock.</h2>
+          </div>
+          <span class="device">Mode: <b>LOCAL PCM</b></span>
+        </div>
+
+        <div class="detector-strip" aria-live="polite">
+          <span id="detector-status">Loading the local acoustic template…</span>
+          <span data-testid="privacy-boundary">Full transcript stored: 0 words</span>
+        </div>
+        <div class="webmcp-strip" aria-live="polite">
+          <span data-testid="webmcp-status">Checking native WebMCP…</span>
+          <span><b id="live-tool-count">0</b>/6 live tools</span>
+          <span id="live-tools">none</span>
+        </div>
+
+        <button id="play-sample" class="play" type="button" disabled>
+          <span aria-hidden="true">▶</span> Play sample call
+        </button>
+        <audio id="sample-call" preload="auto" src="./audio/sample-call.wav"></audio>
+        <p id="call-status" class="call-status">The button enables after the local detector is ready.</p>
+
+        <div class="live-grid">
+          <article class="transcript" aria-labelledby="signal-title">
+            <div class="panel-title"><h3 id="signal-title">Bounded signal ledger</h3><span id="cursor">signal 0</span></div>
+            <p id="event-text" aria-live="polite">No trigger phrase heard yet.</p>
+            <p class="privacy-note">The detector compares acoustic features against a closed phrase set. It does not retain the surrounding conversation.</p>
+          </article>
+          <article id="fact-card" class="fact-card" aria-labelledby="fact-title" hidden>
+            <p class="signal">Possible clock-restart phrase detected in live audio</p>
+            <h3 id="fact-title">A $50 good-faith payment was requested.</h3>
+            <p class="match-line"><span data-testid="detected-phrase">none</span> · <span data-testid="match-score">acoustic match pending</span></p>
+            <p>
+              Sample-file facts: last activity March 2019; displayed balance $9,240. This prototype
+              has not determined the legal status of any real debt.
+            </p>
+            <p class="source-fact">
+              FTC consumer guidance says that in some states a payment or acknowledgement can restart
+              a time-barred debt’s limitations period.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="disclosure" aria-label="Demonstration disclosure">
+        <p>
+          <strong>This is a demonstration on a mock platform with synthetic audio.</strong>
+          We author both the page and the tools. It surfaces sample-file facts and source text; it does not provide legal advice.
+        </p>
+        <p>No real debt collector is recorded, contacted, or named. The human controls every external action.</p>
+      </section>
+    </main>
+  </body>
+</html>
