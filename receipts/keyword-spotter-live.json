@@ -2,7 +2,7 @@
   "status": "PASS",
   "browser": "Chrome/154.0.8035.0",
   "source": "audio.captureStream MediaStreamTrack -> MediaStreamTrackProcessor PCM -> closed-vocabulary acoustic matcher",
-  "warning_seconds_after_click": 8.008,
+  "warning_seconds_after_click": 8.011,
   "threshold_seconds": 10,
   "detected_phrase": "good-faith payment",
   "full_transcript_words_stored": 0,

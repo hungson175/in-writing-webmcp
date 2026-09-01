@@ -103,4 +103,17 @@ describe('PcmKeywordSpotter', () => {
     spotter.reset()
     expect(spotter.push(template)).toHaveLength(1)
   })
+
+  it('reports call-relative time after its rolling feature buffer has truncated', () => {
+    const template = phrase()
+    const spotter = new PcmKeywordSpotter(
+      [{ id: 'danger', label: 'danger phrase', pcm: template }],
+      { sampleRate: SAMPLE_RATE, threshold: 0.82, searchMilliseconds: 500 },
+    )
+    spotter.push(new Float32Array(SAMPLE_RATE * 6))
+
+    const [match] = spotter.push(template)
+
+    expect(match?.heardAtSeconds).toBeCloseTo(7.2, 1)
+  })
 })

@@ -155,7 +155,7 @@ export class PcmKeywordSpotter {
   private readonly emitted = new Set<string>()
   private remainder = new Float32Array()
   private features: FeatureFrame[] = []
-  private totalFrames = 0
+  private featureStartFrame = 0
 
   constructor(templates: KeywordTemplate[], options: KeywordSpotterOptions) {
     if (templates.length === 0) throw new Error('At least one keyword template is required')
@@ -184,7 +184,6 @@ export class PcmKeywordSpotter {
     const completeSamples = combined.length - (combined.length % this.frameSamples)
     this.features.push(...toFeatures(combined.subarray(0, completeSamples), this.frameSamples))
     this.remainder = combined.slice(completeSamples)
-    this.totalFrames += Math.floor(completeSamples / this.frameSamples)
 
     const matches: KeywordMatch[] = []
     for (const template of this.templates) {
@@ -209,14 +208,20 @@ export class PcmKeywordSpotter {
           id: template.id,
           label: template.label,
           score: best,
-          heardAtSeconds: (bestStart + template.features.length) * this.frameSamples / this.sampleRate,
+          heardAtSeconds: (
+            this.featureStartFrame + bestStart + template.features.length
+          ) * this.frameSamples / this.sampleRate,
         })
       }
     }
 
     const longest = Math.max(...this.templates.map((template) => template.features.length))
     const keep = longest + this.searchFrames
-    if (this.features.length > keep) this.features = this.features.slice(-keep)
+    if (this.features.length > keep) {
+      const removed = this.features.length - keep
+      this.features = this.features.slice(-keep)
+      this.featureStartFrame += removed
+    }
     return matches
   }
 
@@ -224,6 +229,6 @@ export class PcmKeywordSpotter {
     this.emitted.clear()
     this.remainder = new Float32Array()
     this.features = []
-    this.totalFrames = 0
+    this.featureStartFrame = 0
   }
 }

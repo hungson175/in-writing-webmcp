@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "url": "https://hungson175.github.io/in-writing-webmcp/",
+  "http_status": 200,
+  "browser": "Chrome/154.0.8035.0",
+  "no_webmcp_flags": true,
+  "tool_sets": {
+    "initial": [
+      "case_clock",
+      "case_history",
+      "recording_boundary",
+      "start_listening"
+    ],
+    "listening": [
+      "case_clock",
+      "case_history",
+      "get_transcript_since",
+      "recording_boundary",
+      "stop_listening"
+    ],
+    "signal": [
+      "case_clock",
+      "check_statement",
+      "danger",
+      "explain_source",
+      "get_transcript_since",
+      "stop_listening"
+    ],
+    "review": [
+      "case_clock",
+      "danger",
+      "explain_source",
+      "get_transcript_since",
+      "prepare_validation_facts",
+      "stop_listening"
+    ],
+    "closed": [
+      "case_clock",
+      "explain_source"
+    ]
+  },
+  "calls": {
+    "get_transcript_since": {
+      "newCursor": 1,
+      "signals": [
+        {
+          "id": "signal-1",
+          "phraseId": "good-faith-payment",
+          "heardAtSeconds": 2.75,
+          "score": 0.9999999999986168
+        }
+      ],
+      "fullTranscriptStoredWords": 0
+    },
+    "check_statement": {
+      "signalId": "signal-1",
+      "classification": "payment-request",
+      "sourceId": "ftc-time-barred-debt",
+      "scope": "some-states",
+      "legalStatus": "not-determined"
+    },
+    "danger": {
+      "act": "make-good-faith-payment",
+      "phraseId": "good-faith-payment",
+      "displayedBalanceUsd": 9240,
+      "consequence": "FTC guidance says a payment could restart a limitations period in some states.",
+      "source": "FTC consumer guidance on time-barred debt",
+      "scope": "some-states",
+      "legalStatus": "not-determined",
+      "externalActionTaken": false
+    },
+    "prepare_validation_facts": {
+      "noticeReceived": "2026-08-12",
+      "section": "15 U.S.C. \u00a71692g",
+      "daysRemaining": 9,
+      "externalActionTaken": false,
+      "humanActionRequired": true
+    },
+    "stop_listening": {
+      "state": "closed",
+      "trackReleased": true
+    }
+  },
+  "max_live": 6,
+  "console_errors": [],
+  "page_errors": []
+}
