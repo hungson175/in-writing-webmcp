@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "detector": "closed-vocabulary acoustic template matcher",
+  "phrase_id": "good-faith-payment",
+  "display_phrase": "good-faith payment",
+  "source": "synthetic sample generated locally with espeak-ng en-us+m3; no real call",
+  "sample_sha256": "0838595f87a0ff3f1a6f7d1b5ac0fa70a3098a97f5094218cb0ede568e540f67",
+  "clip_start_seconds": 5.6,
+  "clip_end_seconds": 7.8,
+  "template_sha256": "bd4fee386d2d3caf96990a2402f680e5500853cc0aadba6e29718d6142d9797e",
+  "sample_rate_hz": 16000,
+  "channels": 1,
+  "encoding": "PCM signed 16-bit little-endian"
+}

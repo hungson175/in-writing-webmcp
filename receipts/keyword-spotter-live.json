@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "browser": "Chrome/154.0.8035.0",
+  "source": "audio.captureStream MediaStreamTrack -> MediaStreamTrackProcessor PCM -> closed-vocabulary acoustic matcher",
+  "warning_seconds_after_click": 8.03,
+  "threshold_seconds": 10,
+  "detected_phrase": "good-faith payment",
+  "full_transcript_words_stored": 0,
+  "sample_sha256": "0838595f87a0ff3f1a6f7d1b5ac0fa70a3098a97f5094218cb0ede568e540f67",
+  "template_sha256": "bd4fee386d2d3caf96990a2402f680e5500853cc0aadba6e29718d6142d9797e",
+  "console_errors": [],
+  "page_errors": []
+}

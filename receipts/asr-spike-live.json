@@ -1,0 +1,20 @@
+{
+  "status": "FAIL",
+  "browser": "Chrome/154.0.8035.0",
+  "device": "wasm",
+  "source": "audio.captureStream MediaStreamTrack -> MediaStreamTrackProcessor PCM -> Worker",
+  "model": "onnx-community/whisper-tiny.en",
+  "model_load_seconds": 5.75,
+  "warning_seconds_after_click": 16.707,
+  "complete_seconds_after_click": 16.709,
+  "transcript": "Hello, this is a synthetic sample collector calling about the accounting near or near or near or near. I can pause collection today if you make a $50 good faith payment.",
+  "word_error_rate": 0.3548,
+  "binding_thresholds": {
+    "warning_seconds_max": 15,
+    "word_error_rate_max": 0.3
+  },
+  "decision": "Full ASR frozen; both thresholds missed. Closed-vocabulary acoustic keyword spotting replaces transcription.",
+  "fact_card_visible": true,
+  "console_errors": [],
+  "page_errors": []
+}

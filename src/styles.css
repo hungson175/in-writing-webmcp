@@ -1,0 +1,58 @@
+:root {
+  color: #17201e;
+  background: #eef0e8;
+  font-family: Manrope, system-ui, sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: #eef0e8; }
+button, progress { font: inherit; }
+main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding-bottom: 56px; }
+.masthead { display: flex; justify-content: space-between; align-items: center; min-height: 76px; border-bottom: 1px solid #89928b; }
+.brand { color: inherit; font-weight: 800; letter-spacing: .12em; text-decoration: none; }
+.prototype, .device, .case-kicker, .eyebrow, .signal, #cursor { font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .05em; font-size: 12px; }
+.prototype { border: 1px solid #89928b; border-radius: 999px; padding: 7px 10px; }
+.hero { display: grid; grid-template-columns: 1.45fr .55fr; gap: 80px; align-items: end; padding: 76px 0 52px; }
+.eyebrow { color: #41554d; font-weight: 500; }
+h1 { margin: 12px 0 18px; font-size: clamp(64px, 8vw, 122px); line-height: .86; letter-spacing: -.07em; }
+h1 em { color: #b14a2b; font-style: normal; }
+.dek { max-width: 680px; font-size: 21px; line-height: 1.55; color: #42504b; }
+.case-file { background: #17201e; color: #f4f1e5; padding: 24px; border-radius: 2px; box-shadow: 12px 12px 0 #d8b649; }
+.case-file dl { margin: 20px 0 0; }
+.case-file dl div { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid #59615e; padding: 14px 0; }
+.case-file dt { color: #b8bfbb; }
+.case-file dd { margin: 0; font-weight: 700; text-align: right; }
+.consent { border: 2px solid #17201e; padding: 16px 20px; background: #f4dc8c; font-size: 16px; }
+.demo { margin-top: 28px; background: #fffdfa; border: 1px solid #89928b; padding: 34px; box-shadow: 8px 8px 0 #17201e; }
+.demo-head, .panel-title { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+h2 { font-size: clamp(34px, 4vw, 58px); letter-spacing: -.045em; margin: 5px 0 20px; }
+.device { background: #d9e5dc; padding: 9px 11px; }
+.detector-strip { margin: 24px 0; padding: 13px 16px; display: flex; justify-content: space-between; gap: 20px; background: #d9e5dc; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; }
+.webmcp-strip { margin: -14px 0 24px; padding: 10px 16px; display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; border: 1px solid #89928b; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; }
+.webmcp-strip #live-tools { grid-column: 1 / -1; color: #53605b; overflow-wrap: anywhere; }
+.play { width: 100%; border: 0; color: #fff; background: #b14a2b; font-size: 24px; font-weight: 800; padding: 21px; cursor: pointer; }
+.play:disabled { cursor: wait; background: #8b938f; }
+.call-status { color: #53605b; }
+.live-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 26px; }
+.transcript, .fact-card { min-height: 230px; padding: 22px; border: 1px solid #89928b; }
+.transcript p { font-size: 19px; line-height: 1.55; }
+.transcript .privacy-note { border-top: 1px solid #b9bfba; padding-top: 14px; color: #53605b; font-size: 14px; }
+.fact-card { background: #b14a2b; color: #fff; border: 0; }
+.fact-card[hidden] { display: block; visibility: hidden; }
+.fact-card h3 { margin: 8px 0 12px; font-size: 29px; line-height: 1.15; }
+.fact-card p { line-height: 1.45; }
+.source-fact { border-top: 1px solid rgba(255,255,255,.5); padding-top: 12px; }
+.match-line { font-family: 'DM Mono', ui-monospace, monospace; text-transform: uppercase; font-size: 12px; }
+.disclosure { margin-top: 28px; background: #17201e; color: #f4f1e5; padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.disclosure p { margin: 0; line-height: 1.5; }
+@media (max-width: 800px) {
+  main { width: min(100% - 24px, 1180px); }
+  .hero, .live-grid, .disclosure { grid-template-columns: 1fr; }
+  .hero { gap: 28px; padding-top: 48px; }
+  h1 { font-size: 64px; }
+  .demo { padding: 22px; }
+  .prototype { display: none; }
+  .detector-strip { flex-direction: column; }
+  .webmcp-strip { grid-template-columns: 1fr; }
+}
