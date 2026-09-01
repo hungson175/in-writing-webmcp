@@ -10,6 +10,7 @@ import {
   DynamicWebMcpRegistry,
   type ModelContextLike,
 } from './webmcp/dynamic-registry'
+import { publicAssetUrl } from './public-asset-url'
 
 const detectorStatus = document.querySelector<HTMLElement>('#detector-status')!
 const playButton = document.querySelector<HTMLButtonElement>('#play-sample')!
@@ -62,7 +63,9 @@ async function registerWebMcp(): Promise<void> {
 
 async function preload(): Promise<void> {
   try {
-    const response = await fetch('/keywords/good-faith-payment.wav')
+    const response = await fetch(
+      publicAssetUrl('keywords/good-faith-payment.wav', document.baseURI),
+    )
     if (!response.ok) throw new Error(`template HTTP ${response.status}`)
     const decoded = decodePcm16Wav(await response.arrayBuffer())
     if (decoded.sampleRate !== 16000) throw new Error('template must be 16 kHz')
